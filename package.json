@@ -1,0 +1,24 @@
+{
+  "name": "credential-manager-node-cli",
+  "version": "0.0.0",
+  "description": "A `credentialManager` for isomorphic-git that interacts with the user via the CLI (for node)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isomorphic-git/credential-manager-node-cli.git"
+  },
+  "keywords": [],
+  "author": "William Hilton <wmhilton@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/isomorphic-git/credential-manager-node-cli/issues"
+  },
+  "homepage": "https://github.com/isomorphic-git/credential-manager-node-cli#readme",
+  "dependencies": {
+    "configstore": "^4.0.0",
+    "prompts": "^0.1.14"
+  }
+}
