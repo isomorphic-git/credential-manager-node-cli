@@ -1,5 +1,5 @@
 {
-  "name": "credential-manager-node-cli",
+  "name": "@isomorphic-git/credential-manager-node-cli",
   "version": "0.0.0",
   "description": "A `credentialManager` for isomorphic-git that interacts with the user via the CLI (for node)",
   "main": "index.js",
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/isomorphic-git/credential-manager-node-cli#readme",
   "dependencies": {
     "configstore": "^4.0.0",
+    "keytar": "^4.2.1",
     "prompts": "^0.1.14"
   }
 }

@@ -2,12 +2,10 @@ const pkg = require('./package.json')
 const ConfigStore = require('configstore')
 const conf = new ConfigStore(pkg.name)
 const prompts = require('prompts')
- 
-const urlify = (protocol, host, path) => `${protocol}://${host}/${path || ''}`.replace('.', '\\.')
 
 module.exports = {
-  async fill ({ protocol, host, path }) {
-    const url = urlify(protocol, host, path)
+  async fill ({ url }) {
+    let { host } = new URL(url)
     let auth = conf.get(url)
     if (auth && auth.length === 1) {
       let response = await prompts([
@@ -51,8 +49,7 @@ module.exports = {
     return response
   },
 
-  async approved({ protocol, host, path, auth }) {
-    const url = urlify(protocol, host, path)
+  async approved({ url, auth }) {
     // Is this already saved?
     if (conf.has(url)) {
       if (conf.get(url).some(x => JSON.stringify(x) === JSON.stringify(auth))) return
@@ -78,8 +75,7 @@ module.exports = {
     }
   },
 
-  async rejected({ protocol, host, path, auth }) {
-    const url = urlify(protocol, host, path)
+  async rejected({ url, auth }) {
     let val = conf.get(url)
     if (val) {
       let _val = val.filter(x => JSON.stringify(x) !== JSON.stringify(auth))
