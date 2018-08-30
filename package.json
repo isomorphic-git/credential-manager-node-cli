@@ -20,6 +20,6 @@
   "dependencies": {
     "configstore": "^4.0.0",
     "keytar": "^4.2.1",
-    "prompts": "^0.1.14"
+    "prompts": "^1.0.0"
   }
 }
